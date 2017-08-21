@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.andrewhatrus.brainbeantrialtask.screen.search.SearchActivity">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.andrewhatrus.brainbeantrialtask.view.EmptyRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchView"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbarSize="5dp"/>
+
+    <ImageView
+        android:id="@+id/emptyView"
+        android:src="@drawable/github_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/empty_text"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"
+        android:layout_below="@id/searchView"
+        android:scrollbars="vertical"
+        android:visibility="gone"/>
+
+</RelativeLayout>
