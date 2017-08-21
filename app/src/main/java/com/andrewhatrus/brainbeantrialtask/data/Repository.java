@@ -44,7 +44,7 @@ public class Repository {
     @NonNull
     public Observable<List<UserRepo>> getUserRepos(String userName, int page) {
         return gitHubService
-                .getUserRepos(userName,page);
+                .getUserRepos(userName, page);
     }
 
     @NonNull

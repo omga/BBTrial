@@ -22,7 +22,6 @@ public class SearchViewModel extends BaseViewModel {
 
     @Nullable
     private MutableLiveData<List<GitHubUser>> usersLiveData;
-
     private int page;
 
     MutableLiveData<List<GitHubUser>> getCurrentData() {

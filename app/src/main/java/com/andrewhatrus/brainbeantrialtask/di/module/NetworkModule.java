@@ -32,7 +32,6 @@ public class NetworkModule {
         return retrofit.create(GitHubService.class);
     }
 
-    //TODO: CHECK INTERNET FIRST
     private Retrofit buildRetrofit() {
         return new Retrofit.Builder()
                 .baseUrl(GitHubService.BASE_URL)
@@ -43,7 +42,7 @@ public class NetworkModule {
     }
 
     @NonNull
-    OkHttpClient buildOkHttpClient() {
+    private OkHttpClient buildOkHttpClient() {
         return new OkHttpClient.Builder()
                 .build();
     }

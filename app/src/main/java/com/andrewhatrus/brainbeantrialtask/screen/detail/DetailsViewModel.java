@@ -23,17 +23,13 @@ public class DetailsViewModel extends BaseViewModel {
 
     @Nullable
     private MutableLiveData<List<UserRepo>> usersLiveData;
-
     @Nullable
     private MutableLiveData<GitHubUserFullProfile> fullProfileLiveData;
-
     private int page;
-
     @Nullable
     MutableLiveData<List<UserRepo>> getCurrentReposData() {
         return usersLiveData;
     }
-
     @Nullable
     MutableLiveData<GitHubUserFullProfile> getCurrentUserData() {
         return fullProfileLiveData;

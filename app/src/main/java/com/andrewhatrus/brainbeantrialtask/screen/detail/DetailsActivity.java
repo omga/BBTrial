@@ -123,7 +123,6 @@ public class DetailsActivity extends BaseLifecycleActivity {
     }
 
     private void fillViews() {
-        Log.d("userFullProfile", "loadRepos start: " + userFullProfile.getAvatarUrl());
         description.setText(userFullProfile.getBio());
         fullName.setText(userFullProfile.getName());
         Glide.with(this)

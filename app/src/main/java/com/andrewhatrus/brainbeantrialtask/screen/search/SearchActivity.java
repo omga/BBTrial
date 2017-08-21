@@ -34,16 +34,12 @@ public class SearchActivity extends BaseLifecycleActivity {
 
     @BindView(R.id.recyclerView)
     EmptyRecyclerView recyclerView;
-
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
-
     @BindView(R.id.searchView)
     SearchView searchView;
-
     @BindView(R.id.emptyView)
     View emptyView;
-
     SearchViewModel viewModel;
     private SearchUsersAdapter adapter;
     private LinearLayoutManager layoutManager;
@@ -79,7 +75,6 @@ public class SearchActivity extends BaseLifecycleActivity {
 
     private void setupSearchView() {
         searchView.setOnCloseListener( () -> {
-            Log.d("SEARCH", "CANCEL>??>?>??");
             adapter.clear();
             return false;
         });
@@ -95,7 +90,6 @@ public class SearchActivity extends BaseLifecycleActivity {
                         viewModel.setPage(0);
                         doSearch(String.valueOf(charSequence));
                     }
-                    Log.d("SEARCH", "TEXT: " + charSequence);
                 });
 
     }
@@ -105,8 +99,6 @@ public class SearchActivity extends BaseLifecycleActivity {
         viewModel.searchUsers(s).observe(this, users -> {
             if(users!=null) {
                 adapter.setData(users);
-                Log.d("SEARCH", "doSearch: " + users.size());
-
             }
         });
     }
@@ -146,7 +138,7 @@ public class SearchActivity extends BaseLifecycleActivity {
             if (adapter.getData().size() <= (lastVisibleItem + visibleThreshold)) {
                 LiveData<List<GitHubUser>> ld = viewModel.searchUsers(String.valueOf(searchView.getQuery()));
                 ld.observe(SearchActivity.this, users -> {
-                    Log.d("SCROLL", "doSearch: " + users.size());
+                    Log.d("SCROLL", "size: " + users.size());
                     adapter.addData(users);
                 });
             }
